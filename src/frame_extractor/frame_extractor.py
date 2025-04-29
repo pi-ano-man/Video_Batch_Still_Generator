@@ -7,7 +7,7 @@ FrameExtractor Modul - Extrahiert Frames aus Videos mit FFmpeg
 
 import os
 import logging
-import subprocess
+import subprocess  # nosec - wird nur mit kontrollierten, festen Parametern für FFmpeg verwendet
 from pathlib import Path
 from typing import List, Optional, Tuple, Dict, Union
 

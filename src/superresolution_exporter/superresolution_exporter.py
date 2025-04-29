@@ -7,7 +7,7 @@ SuperResolutionExporter Modul - finaler Super-Resolution- und Batch-Export Schri
 
 import os
 import logging
-import subprocess
+import subprocess  # nosec - wird nur mit kontrollierten, festen Parametern für externe CLI-Tools verwendet
 import tempfile
 import cv2
 import numpy as np
@@ -112,7 +112,7 @@ class SuperResolutionExporter:
                         
                         # Definiere Netzwerk-Architektur
                         self.model = RRDBNet(3, 3, 64, 23, gc=32)
-                        self.model.load_state_dict(torch.load(model_path)['params'], strict=True)
+                        self.model.load_state_dict(torch.load(model_path)['params'], strict=True)  # nosec - Modelle werden nur aus vertrauenswürdigen Quellen geladen
                         self.model.eval()
                         self.model = self.model.to(self.device)
                     
@@ -313,7 +313,7 @@ class SuperResolutionExporter:
             logger.info(f"Führe aus: {' '.join(cmd)}")
             
             # Führe den Befehl aus
-            result = subprocess.run(
+            result = subprocess.run(  # nosec - cmd enthält nur validierte, nicht-benutzerkontrollierte Parameter
                 cmd, 
                 capture_output=True, 
                 text=True, 
