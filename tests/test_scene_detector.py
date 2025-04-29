@@ -127,8 +127,9 @@ class TestSceneDetector(unittest.TestCase):
         mock_split.assert_called_once_with("test_video.mp4", mock_scene_list)
 
     @patch('src.scene_detector.scene_detector.Path.glob')
+    @patch('src.scene_detector.scene_detector.Path.is_file')
     @patch('src.scene_detector.scene_detector.SceneDetector.process_video')
-    def test_process_directory(self, mock_process, mock_glob):
+    def test_process_directory(self, mock_process, mock_is_file, mock_glob):
         """Testet die Funktion zur Verarbeitung eines Verzeichnisses."""
         # Vorbereitung der Mocks
         mock_video_files = [
@@ -139,17 +140,22 @@ class TestSceneDetector(unittest.TestCase):
         
         # Mock für glob, der eine Liste von Mock-Pfaden zurückgibt
         def mock_glob_side_effect(pattern):
-            if pattern.endswith(".mp4"):
+            if "**/*.mp4" in str(pattern):
                 return [mock_video_files[0]]
-            elif pattern.endswith(".avi"):
+            elif "**/*.avi" in str(pattern):
                 return [mock_video_files[1]]
-            elif pattern.endswith(".mov"):
+            elif "**/*.mov" in str(pattern):
                 return [mock_video_files[2]]
-            elif pattern.endswith(".mkv"):
+            elif "**/*.mkv" in str(pattern):
                 return []
+            elif "**/*" in str(pattern):
+                return mock_video_files
             return []
         
         mock_glob.side_effect = mock_glob_side_effect
+        
+        # Mock für is_file, der immer True zurückgibt
+        mock_is_file.return_value = True
         
         # Mock für process_video, der für jedes Video eine Liste von Szenendateien zurückgibt
         mock_process.side_effect = [

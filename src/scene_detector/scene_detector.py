@@ -138,18 +138,26 @@ class SceneDetector:
         # Unterstützte Videoformate
         video_extensions = ('.mp4', '.avi', '.mov', '.mkv')
         
-        # Finde alle Videos im Eingabeverzeichnis
-        for video_file in self.input_dir.glob('**/*'):
-            if video_file.is_file() and video_file.suffix.lower() in video_extensions:
-                try:
-                    output_files = self.process_video(
-                        str(video_file), 
-                        threshold, 
-                        use_adaptive_detector
-                    )
-                    all_output_files.extend(output_files)
-                except Exception as e:
-                    logger.error(f"Fehler bei der Verarbeitung von {video_file}: {e}")
+        # Finde alle Dateien im Eingabeverzeichnis
+        all_files = list(self.input_dir.glob('**/*'))
+        
+        # Filtere nach Videodateien
+        video_files = [f for f in all_files if f.is_file() and f.suffix.lower() in video_extensions]
+        
+        logger.info(f"Gefunden: {len(video_files)} Videodateien im Verzeichnis {self.input_dir}")
+        
+        # Verarbeite jede Videodatei
+        for video_file in video_files:
+            try:
+                logger.info(f"Verarbeite Video: {video_file}")
+                output_files = self.process_video(
+                    str(video_file), 
+                    threshold, 
+                    use_adaptive_detector
+                )
+                all_output_files.extend(output_files)
+            except Exception as e:
+                logger.error(f"Fehler bei der Verarbeitung von {video_file}: {e}")
         
         logger.info(f"Insgesamt {len(all_output_files)} Szenen aus allen Videos erzeugt")
         return all_output_files
