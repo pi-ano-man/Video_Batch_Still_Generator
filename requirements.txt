@@ -1,0 +1,14 @@
+scenedetect[opencv]
+ffmpeg-python
+deepface
+numpy
+Click
+tqdm
+appdirs
+opencv-python
+pytest
+pytest-cov
+scikit-learn
+torch
+basicsr
+pillow
