@@ -13,3 +13,5 @@ torch
 basicsr
 pillow
 tf-keras
+PySide6
+python-dotenv

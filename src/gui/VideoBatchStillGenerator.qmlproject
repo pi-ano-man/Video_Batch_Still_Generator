@@ -1,0 +1,65 @@
+import QmlProject
+
+Project {
+    mainFile: "qml/Main.qml"
+    
+    /* Verzeichnisse, die QML-Dateien enthalten */
+    QmlFiles {
+        directory: "."
+        recursive: true
+        filter: "*.qml"
+    }
+    
+    /* JavaScript-Dateien für Logik */
+    JavaScriptFiles {
+        directory: "."
+        recursive: true
+        filter: "*.js"
+    }
+    
+    /* Bilder und andere Ressourcen */
+    ImageFiles {
+        directory: "."
+        recursive: true
+        filter: ["*.png", "*.jpg", "*.jpeg", "*.gif", "*.svg"]
+    }
+    
+    /* Weitere Ressourcendateien */
+    Files {
+        directory: "."
+        recursive: true
+        filter: ["*.ttf", "*.otf", "*.obj", "*.json", "*.md", "*.txt"]
+    }
+    
+    /* Design-Eigenschaften */
+    Environment {
+        QT_QUICK_CONTROLS_STYLE: "Basic"
+        QT_AUTO_SCREEN_SCALE_FACTOR: "1"
+        QT_QUICK_CONTROLS_MOBILE: "false"
+        QT_LOGGING_RULES: "qt.qml.connections=false"
+        
+        /* Deine eigenen Umgebungsvariablen hier */
+        // APP_DATA_PATH: "../../data"
+    }
+    
+    /* Importpfade für QML-Module */
+    importPaths: [
+        ".",
+        "qml",
+        "qml/components",
+        "qml/views"
+    ]
+    
+    /* QML-Module */
+    qmlImportPaths: [
+        "."
+    ]
+    
+    /* Exportpfad für Komponenten-Bibliothek */
+    // exportPaths: [ "exports" ]
+    
+    /* Qt Design Studio Info */
+    multilanguageSupport: true
+    supportedLanguages: ["de", "en"]
+    primaryLanguage: "de"
+} 

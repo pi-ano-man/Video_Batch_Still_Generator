@@ -16,6 +16,10 @@ Candidate Frames → QualityEvaluator → Top Candidates
 Top Candidates → SelectionController ↔ GUI
 Ausgewählte Bilder → SuperResolutionExporter → Final Output
 
+## GUI
+- GUI basierend auf QML. 
+- GUI muss mit Qt Design Studio bearbeitbar sein. 
+
 ## Schnittstellen
 - **REST API** (intern) zwischen GUI und Backend
 - **Dateisystem** im `/data`-Workspace:
