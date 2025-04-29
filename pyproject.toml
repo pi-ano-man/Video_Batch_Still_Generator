@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-batch-still-generator"
+version = "0.1.0"
+description = "Automatisierte Verarbeitung von Videos und Export von Standbildern"
+authors = [
+    { name = "Dein Name", email = "deine@email.de" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "scenedetect[opencv]",
+    "ffmpeg-python",
+    "deepface",
+    "numpy",
+    "Click",
+    "tqdm",
+    "appdirs",
+    "opencv-python",
+    "pytest",
+    "pytest-cov",
+    "scikit-learn",
+    "torch",
+    "basicsr",
+    "pillow",
+    "tf-keras"
+] 
