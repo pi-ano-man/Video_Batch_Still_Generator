@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "Regeln für die GUI-Logik"
+globs:
+  - "src/gui/**/*.py"
+  - "src/gui/**/*.qml"
+alwaysApply: true
+---
+- Haupt-View: Bildliste mit **Zwischenspeicherung** der Auswahl  
+- Feinjustage: Buttons `<`, `>` für benachbarte Frames  
+- Export-Button: startet finalen **SuperResolutionExporter**  

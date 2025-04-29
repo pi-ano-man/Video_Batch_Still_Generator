@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "Template-Ansatz für Gesichtserkennung"
+globs:
+  - "src/**/FaceFilter.py"
+alwaysApply: true
+---
+- Lade mehrere Referenzbilder (`/data/reference/<Person>/*.jpg`)  
+- Erzeuge pro Bild ein Face-Embedding  
+- Vergleiche jedes Frame-Embedding mit **allen** Referenz-Embeddings  
+- Nutze Minimum-Distanz und Schwelle (`FACE_MATCH_THRESHOLD` aus `.env`)  

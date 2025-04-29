@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+id: quality-evaluator
+description: "Bewertung und Clustering der Bildqualität"
+globs:
+  - "src/**/QualityEvaluator.py"
+alwaysApply: true
+---
+- Wende Laplace-Varianz für Schärfe-Score an  
+- Identifiziere Bewegungs­unschärfe (z. B. mit OpenCV)  
+- Fasse ähnliche Bilder mit DBSCAN zusammen, nur ein Repräsentant pro Cluster anbieten  

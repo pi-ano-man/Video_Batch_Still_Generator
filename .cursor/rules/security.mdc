@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+id: security
+description: "Security- und Datenschutz-Regeln"
+globs:
+  - ".env*"
+  - "src/**/*.py"
+alwaysApply: true
+---
+- Niemals Secrets oder Schlüssel in Commits einchecken  
+- Verwende SECURITY.md-Guidelines  
+- Nutze bandit für Python-Security-Scans  

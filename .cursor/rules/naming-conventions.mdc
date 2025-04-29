@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "Namenskonventionen für Python, QML und Klassen"
+globs:
+  - "src/**/*.py"
+  - "src/gui/**/*.qml"
+alwaysApply: true
+---
+- Python-Module müssen in **snake_case** benannt werden  
+- QML-Dateien und QML-Komponenten in **PascalCase**  
+- Python-Klassen in **PascalCase**, Methoden und Variablen in **snake_case**

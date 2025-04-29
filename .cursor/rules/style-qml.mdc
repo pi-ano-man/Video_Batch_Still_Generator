@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+id: style-qml
+description: "QML Lint-Regeln"
+globs:
+  - "src/gui/**/*.qml"
+alwaysApply: true
+---
+- 2 Spaces pro Einzug  
+- Komponenten in PascalCase, IDs in snake_case
+- Vermeide Inline-JavaScript, Logik in Python/Backend auslagern  
+- Verwende Qt Design Studio-kompatible Property-Namen  

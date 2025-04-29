@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "Tests und CI-Vorgaben"
+globs:
+  - "tests/**/*.py"
+  - ".github/workflows/ci.yml"
+alwaysApply: true
+---
+- Nutze **pytest**, alle Funktionen müssen Unit-Tests haben  
+- Fixtures unter `tests/fixtures/` verwenden  
+- CI-Pipeline:  
+  - `flake8 .`  
+  - `bandit -r src/`  
+  - `pytest --maxfail=1 --disable-warnings -q`  

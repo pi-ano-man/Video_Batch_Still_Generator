@@ -27,4 +27,14 @@ venv/
 # Python egg metadata
 *.egg-info/
 dist/
-build/ 
+build/
+
+# Große Binärdateien
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+*.wmv
+*.webm
+*.m4v

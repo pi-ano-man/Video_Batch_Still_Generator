@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "Finaler Super-Resolution- & Export-Schritt"
+globs:
+  - "src/**/SuperResolutionExporter.py"
+alwaysApply: true
+---
+- Nutz Open-Source-Modelle (EDVR, BasicVSR, ESRGAN) per CLI oder Python-Wrapper  
+- **Batch-Modus**: mehrere Bilder auf einmal verarbeiten  
+- Exportformat: **PNG** oder **TIFF**, verlustfrei  

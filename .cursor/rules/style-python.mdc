@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: "PEP8 Style-Regeln für Python"
+globs:
+  - "src/**/*.py"
+alwaysApply: true
+---
+- Max. Zeilen­länge: **100 Zeichen**  
+- Nutze **4 Spaces** pro Einzug  
+- Docstrings im **Google-Style**  
+- Keine `print()`-Statements in Produktionscode  
+- Import­blöcke: Standard­lib, Dritt­bibliotheken, lokal, jeweils alphabetisch

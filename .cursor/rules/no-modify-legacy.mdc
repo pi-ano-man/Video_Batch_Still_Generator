@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+id: no-modify-legacy
+description: "Legacy-Code darf nicht verändert werden"
+globs:
+  - "legacy/**"
+alwaysApply: true
+---
+- Kein Editieren von Dateien im `legacy/`-Ordner  
+- Bei Bedarf neuen Code in `src/` anlegen, statt legacy anzupassen  
